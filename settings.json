@@ -1,0 +1,151 @@
+{
+  "editor.formatOnSave": true,
+  "editor.suggest.insertMode": "replace",
+  "terminal.integrated.fontFamily": "MesloLGS NF",
+  "editor.linkedEditing": true,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "launch": {},
+  "[json]": {},
+  "editor.minimap.enabled": false,
+  "workbench.iconTheme": "material-icon-theme",
+  "zenMode.hideLineNumbers": false,
+  "zenMode.hideTabs": false,
+  "editor.lineNumbers": "relative",
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  "vim.easymotion": true,
+  "vim.incsearch": true,
+  "vim.useCtrlKeys": true,
+  "vim.hlsearch": true,
+  "vim.useSystemClipboard": true,
+  "vim.timeout": 400,
+
+  // LEADER
+  "vim.leader": "<Space>",
+  "vim.handleKeys": {
+    "<C-a>": true,
+    "<C-f>": false
+  },
+
+  "vim.normalModeKeyBindingsNonRecursive": [
+    // NAVIGATION
+    // switch b/w buffers
+    { "before": ["<S-Tab>"], "commands": [":bprevious"] },
+    { "before": ["<Tab>"], "commands": [":bnext"] },
+
+    // splits
+    { "before": ["leader", "\\"], "commands": [":vsplit"] },
+    { "before": ["leader", "|"], "commands": [":split"] },
+
+    //close
+    { "before": ["leader", "x"], "commands": [":x"], "silent": true },
+
+    // panes
+    {
+      "before": ["<C-h>"],
+      "commands": ["workbench.action.focusLeftGroup"]
+    },
+    // {
+    //   "before": ["<C-j>"],
+    //   "commands": ["workbench.action.focusBelowGroup"]
+    // },
+    // {
+    //   "before": ["<C-k>"],
+    //   "commands": ["workbench.action.focusAboveGroup"]
+    // },
+    {
+      "before": ["<C-l>"],
+      "commands": ["workbench.action.focusRightGroup"]
+    },
+
+    // NICE TO HAVE
+    { "before": ["leader", "w"], "commands": [":w!"], "silent": true },
+    { "before": ["leader", "q"], "commands": [":q!"], "silent": true },
+    { "before": ["q"], "after": ["<Esc>"] },
+    {
+      "before": ["[", "d"],
+      "commands": ["editor.action.marker.prev"]
+    },
+    {
+      "before": ["]", "d"],
+      "commands": ["editor.action.marker.next"]
+    },
+    {
+      "before": ["<leader>", "c", "a"],
+      "commands": ["editor.action.quickFix"]
+    },
+    {
+      "before": ["leader", "f", "f"],
+      "commands": ["workbench.action.quickOpen"]
+    },
+    {
+      "before": ["leader", "f", "m"],
+      "commands": ["editor.action.formatDocument"]
+    },
+    {
+      "before": ["<S-k>"],
+      "commands": [{ "command": "editor.action.showHover" }],
+      "silent": true
+    },
+    {
+      "before": [":"],
+      "commands": ["workbench.action.showCommands"],
+      "silent": true
+    },
+
+    // FILE TREE
+    {
+      "before": ["leader", "e"],
+      "commands": [{ "command": "workbench.files.action.focusFilesExplorer" }]
+    },
+
+    // TERMINAL
+    {
+      "before": ["<C-j>"],
+      "commands": ["workbench.action.terminal.focus"]
+    },
+    {
+      "commands": ["workbench.action.togglePanel"]
+    },
+
+    // toggle comment selection
+    { "before": ["leader", "/"], "commands": ["editor.action.commentLine"] }
+  ],
+
+  "vim.insertModeKeyBindings": [
+    // better escape,
+    { "before": ["j", "j"], "after": ["<Esc>"] },
+    { "before": ["j", "k"], "after": ["<Esc>"] },
+
+    // navigation
+    { "before": ["<C-h>"], "after": ["<Left>"] },
+    { "before": ["<C-j>"], "after": ["<Down>"] },
+    { "before": ["<C-k>"], "after": ["<Up>"] },
+    { "before": ["<C-l>"], "after": ["<Right>"] }
+  ],
+
+  "vim.visualModeKeyBindings": [
+    // Beter Escape
+    { "before": ["j", "j"], "after": ["<Esc>"] },
+    { "before": ["j", "k"], "after": ["<Esc>"] },
+
+    // Stay in visual mode while indenting
+    { "before": ["<"], "commands": ["editor.action.outdentLines"] },
+    { "before": [">"], "commands": ["editor.action.indentLines"] },
+
+    // Move selected lines while staying in visual mode
+    { "before": ["J"], "commands": ["editor.action.moveLinesDownAction"] },
+    { "before": ["K"], "commands": ["editor.action.moveLinesUpAction"] },
+
+    // toggle comment selection
+    { "before": ["leader", "/"], "commands": ["editor.action.commentLine"] }
+  ]
+}
